@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, Outlet } from "react-router-dom";
 
 export default function NavbarLg() {
-  const userEmail = localStorage.getItem("userEmail");
+
   const [mode, setMode] = useState(null);
   const navigate = useNavigate();
 
@@ -31,9 +31,7 @@ export default function NavbarLg() {
 
         {/* Right Side - Logout Button */}
         <div className="flex items-center gap-4">
-          {userEmail && (
-            <span className="text-sm font-medium text-gray-300">Welcome, {userEmail}</span>
-          )}
+  
           <button
             onClick={handleLogout}
             className="bg-gradient-to-r from-red-500 to-pink-500 text-white font-semibold px-5 py-2 rounded-full shadow-md hover:scale-105 transition-transform duration-300"

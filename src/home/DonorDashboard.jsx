@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 const DonorDashboard = () => {
   const navigate = useNavigate();
+  const userEmail = localStorage.getItem("userEmail");
   const [activeComponent, setActiveComponent] = useState(null);
 
   function handleShowProfile() {
@@ -39,7 +40,9 @@ const DonorDashboard = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-100 to-white p-6">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-2">Donor Dashboard</h2>
-  
+        {userEmail && (
+          <p className="text-center text-gray-600 mb-8 text-sm">Welcome, <span className="font-medium text-teal-600">{userEmail}</span></p>
+        )}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="bg-white rounded-2xl shadow-lg p-4 hover:shadow-2xl transition-shadow">
             <img src="/download1.png" alt="Donor Profile" className="rounded-xl w-full h-40 object-cover mb-4" />

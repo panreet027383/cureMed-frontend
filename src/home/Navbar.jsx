@@ -39,7 +39,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex gap-4">
+          <div className="flex gap-4">
             <a href="#services" className="px-4 py-2 hover:text-pink-400">Services</a>
             <a href="#team" className="px-4 py-2 hover:text-pink-400">Our Team</a>
             <a href="#contact" className="px-4 py-2 hover:text-pink-400">Contact Us</a>
