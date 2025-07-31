@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Signup from "./Signup";
 import Login from "./Login";
-import { useNavigate } from "react-router-dom";
 import Home from "./Home";
 import Footer from "./Footer";
 
@@ -10,53 +10,54 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
-  function handleSignup() {
+  const handleSignup = () => {
     setMode("signup");
     setMenuOpen(false);
     navigate("/signup");
-  }
+  };
 
-  function handleLogin() {
+  const handleLogin = () => {
     setMode("login");
     setMenuOpen(false);
     navigate("/login");
-  }
+  };
 
   const closeForm = () => setMode(null);
 
   return (
     <>
-      <nav className="bg-gray-900 text-white px-6 py-4 flex items-center justify-between shadow-md">
-       <div className="flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center gap-3">
-          <img
-            src="medicine.png"
-            alt="MedConnect Logo"
-            className="h-8 w-8 object-contain"
-          />
-          <span className="text-xl font-semibold tracking-wide">CareConnect</span>
-        </div>
+      <nav className="bg-gray-900 text-white px-6 py-4 shadow-md relative">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <div className="flex items-center gap-3">
+            <img
+              src="medicine.png"
+              alt="MedConnect Logo"
+              className="h-8 w-8 object-contain"
+            />
+            <span className="text-xl font-semibold tracking-wide">CareConnect</span>
+          </div>
 
-        {/* Auth Buttons */}
-        <div className="hiddden md:flex gap-4">
-           <a href="#services" className="px-4 py-2 hover:text-pink-400">Services</a>
+          {/* Desktop Menu */}
+          <div className="hidden md:flex gap-4">
+            <a href="#services" className="px-4 py-2 hover:text-pink-400">Services</a>
             <a href="#team" className="px-4 py-2 hover:text-pink-400">Our Team</a>
-            <a href="#contact" className="px-4 py-2 hover:text-pink-400">Contact Us</a>          
-          <button
-            onClick={handleSignup}
-            className="bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold px-6 py-2 rounded-full shadow-md hover:scale-105 transition-transform duration-300"
-          >
-            Sign Up
-          </button>
-          <button
-            onClick={handleLogin}
-            className="bg-gradient-to-r from-indigo-500 to-fuchsia-500 text-white font-semibold px-6 py-2 rounded-full shadow-md hover:scale-105 transition-transform duration-300"
-          >
-            Log In
-          </button>
-        </div>
-                  {/* Hamburger Icon */}
+            <a href="#contact" className="px-4 py-2 hover:text-pink-400">Contact Us</a>
+            <button
+              onClick={handleSignup}
+              className="bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold px-6 py-2 rounded-full shadow-md hover:scale-105 transition-transform duration-300"
+            >
+              Sign Up
+            </button>
+            <button
+              onClick={handleLogin}
+              className="bg-gradient-to-r from-indigo-500 to-fuchsia-500 text-white font-semibold px-6 py-2 rounded-full shadow-md hover:scale-105 transition-transform duration-300"
+            >
+              Log In
+            </button>
+          </div>
+
+          {/* Hamburger Icon */}
           <button
             className="md:hidden focus:outline-none"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -85,7 +86,8 @@ export default function Navbar() {
             </svg>
           </button>
         </div>
-              {/* Mobile Menu */}
+
+        {/* Mobile Menu */}
         {menuOpen && (
           <div className="md:hidden mt-4 flex flex-col gap-3 bg-gray-800 p-4 rounded-lg">
             <a href="#services" onClick={() => setMenuOpen(false)} className="text-white hover:text-pink-400">Services</a>
@@ -103,16 +105,15 @@ export default function Navbar() {
             >
               Log In
             </button>
-            </div>
+          </div>
         )}
-
       </nav>
 
       {/* Content */}
       <Home />
       <Footer />
 
-      {/* Optional Overlay Form */}
+      {/* Overlay Form */}
       {mode && (
         <div
           className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50"
