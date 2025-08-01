@@ -5,11 +5,6 @@ export default function NavbarPrf() {
   const [mode, setMode] = useState(null);
   const navigate = useNavigate();
 
-  function handleBack() {
-    setMode("back");
-    navigate("/");
-  }
-
   function handleLogout() {
     setMode("logout");
     navigate("/");
@@ -33,12 +28,6 @@ export default function NavbarPrf() {
 
         {/* Links */}
         <div className="flex gap-4">
-          <button
-            onClick={handleBack}
-            className="bg-gradient-to-r from-blue-500 to-cyan-500 px-5 py-2 rounded-full font-semibold hover:scale-105 transition-transform duration-300 shadow-lg"
-          >
-            Back
-          </button>
           <button
             onClick={handleLogout}
             className="bg-gradient-to-r from-red-500 to-pink-500 px-5 py-2 rounded-full font-semibold hover:scale-105 transition-transform duration-300 shadow-lg"
