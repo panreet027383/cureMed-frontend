@@ -79,8 +79,8 @@ const Home = () => {
         <div className="flex flex-wrap justify-center gap-10 text-center">
           <div className="max-w-xs">
             <img
-              src="sir.jpg"
-              alt="Rajesh Bansal"
+              src=""
+              alt="None"
               className="w-40 h-40 rounded-full mx-auto mb-4 object-cover"
             />
             <h3 className="text-xl font-semibold">Harmeet Singh & Karan </h3>
