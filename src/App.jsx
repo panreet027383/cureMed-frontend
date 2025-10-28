@@ -22,6 +22,8 @@ function App() {
       <Route path="/" element = { <Navbar> </Navbar> }  >
 
         <Route path="signup" element = { <Signup></Signup> } ></Route>
+      </Route>
+      <Route path="/" element = { <Navbar> </Navbar> }  >
         <Route path="login" element = { <Login></Login> } ></Route>
       
       </Route>

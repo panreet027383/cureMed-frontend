@@ -83,9 +83,9 @@ const Home = () => {
               alt="Rajesh Bansal"
               className="w-40 h-40 rounded-full mx-auto mb-4 object-cover"
             />
-            <h3 className="text-xl font-semibold">Rajesh Bansal</h3>
+            <h3 className="text-xl font-semibold">Harmeet Singh & Karan </h3>
             <p className="text-teal-600">Project Manager</p>
-            <p>Author of Real Java</p>
+            <p>B Tech (CSE)</p>
           </div>
           <div className="max-w-xs">
             <img
@@ -95,7 +95,7 @@ const Home = () => {
             />
             <h3 className="text-xl font-semibold">Parneet Kaur</h3>
             <p className="text-teal-600">Lead Developer</p>
-            <p>Student of B.Tech (CSE)</p>
+            <p>B.Tech (CSE)</p>
           </div>
         </div>
       </section>

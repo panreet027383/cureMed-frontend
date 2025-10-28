@@ -53,7 +53,7 @@ const DonorDashboard = () => {
           <div className="bg-white rounded-2xl shadow-lg p-4 hover:shadow-2xl transition-shadow">
             <img src="/download1.png" alt="Donor Profile" className="rounded-xl w-full h-40 object-cover mb-4" />
             <center><h2 className='font-bold'>Donor Details</h2></center>
-            <p>taking donor details for medicines</p>
+            <br /> <p>Your information will be helpful for us.</p> <br />
             <button
               onClick={handleShowProfile}
               className="w-full bg-gradient-to-r from-teal-500 to-green-500 text-white font-semibold py-2 rounded-full hover:scale-105 transition-transform duration-300"
@@ -65,7 +65,7 @@ const DonorDashboard = () => {
           <div className="bg-white rounded-2xl shadow-lg p-4 hover:shadow-2xl transition-shadow">
             <img src="/med.jpeg" alt="Donate Medicine" className="rounded-xl w-full h-40 object-cover mb-4" />
             <center><h2 className='font-bold'>Medicines to Donate</h2></center>
-            <p>form for medicines which donor donates</p>
+            <br /> <p>Fill the details of medicine you want to donate.</p> <br />
             <button
               onClick={handleFindMedicines}
               className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold py-2 rounded-full hover:scale-105 transition-transform duration-300"
@@ -77,7 +77,7 @@ const DonorDashboard = () => {
           <div className="bg-white rounded-2xl shadow-lg p-4 hover:shadow-2xl transition-shadow">
             <img src="/list.jpeg" alt="Listed Medicines" className="rounded-xl w-full h-40 object-cover mb-4" />
             <center><h2 className='font-bold'>Listed Medicines</h2></center>
-            <p>details of medicines which donor wants to donate</p>
+           <br /> <p>Medicines you have posted to donate.</p> <br />
             <button
               onClick={handleListedMed}
               className="w-full bg-gradient-to-r from-indigo-500 to-fuchsia-500 text-white font-semibold py-2 rounded-full hover:scale-105 transition-transform duration-300"
@@ -89,8 +89,8 @@ const DonorDashboard = () => {
           <div className="bg-white rounded-2xl shadow-lg p-4 hover:shadow-2xl transition-shadow">
             <img src="/equp.jpeg" alt="Manage Equipment" className="rounded-xl w-full h-40 object-cover mb-4" />
             <center><h2 className='font-bold'>Equipments to Donate</h2></center>
-            <p>form for equipments which donor donates</p>
-            <button
+          <br />  <p>Fill the details of Equipments you want to donate.</p>
+           <br /> <button
               onClick={handleEquipment}
               className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold py-2 rounded-full hover:scale-105 transition-transform duration-300"
             >

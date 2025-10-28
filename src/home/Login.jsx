@@ -36,7 +36,7 @@ const Login = () => {
     } else {
       alert(resp.data.msg);
     }
-  }
+  }3
 
   return (
     <div>
@@ -52,7 +52,7 @@ const Login = () => {
         <form onSubmit={(e) => { e.preventDefault(); doLogin(); }} className="space-y-5">
           {/* Email */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+            <label className=" text-sm font-medium text-gray-700 mb-1 flex items-center">
               <MdEmail className="mr-2 text-lg" /> Email
             </label>
             <input
@@ -67,7 +67,7 @@ const Login = () => {
 
           {/* Password */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+            <label className=" text-sm font-medium text-gray-700 mb-1 flex items-center">
               <RiLockPasswordLine className="mr-2 text-lg" /> Password
             </label>
             <div className="relative">

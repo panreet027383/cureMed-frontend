@@ -4,11 +4,14 @@ import { MdEmail, MdVisibility, MdVisibilityOff } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { FaUserTag } from "react-icons/fa";
 import server_url from "../config/url";
+import { useNavigate } from "react-router-dom";
+import Login from "./Login";
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [activeComponent, setActiveComponent] = useState(null);
   const [formData, setFormData] = useState({ uid: "", pwd: "", ut: "" });
-
+  const navigate = useNavigate();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -19,11 +22,15 @@ const Signup = () => {
       let url = server_url+"/user/signup";
       let resp = await axios.post(url, formData);
       alert(resp.data.msg);
-      if (resp.data.status) 
-      {
-        localStorage.setItem("token", resp.data.token);
-        alert(resp.data.token);
-      }
+      // if (resp.data.status) 
+      // {
+      //   localStorage.setItem("token", resp.data.token);
+      //   alert(resp.data.token);
+        
+      // }
+      setActiveComponent('login');
+        navigate("login");
+      if (activeComponent === 'login') return <Login />;
   }
 
   return (
@@ -34,7 +41,7 @@ const Signup = () => {
 
           {/* Email */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+            <label className=" text-sm font-medium text-gray-700 mb-1 flex items-center">
               <MdEmail className="mr-2 text-teal-600" /> Email Address
             </label>
             <input
@@ -49,7 +56,7 @@ const Signup = () => {
 
           {/* Password */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+            <label className="text-sm font-medium text-gray-700 mb-1 flex items-center">
               <RiLockPasswordLine className="mr-2 text-teal-600" /> Password
             </label>
             <div className="relative">
@@ -72,7 +79,7 @@ const Signup = () => {
 
           {/* User Type */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1 flex items-center">
+            <label className="text-sm font-medium text-gray-700 mb-1 flex items-center">
               <FaUserTag className="mr-2 text-teal-600" /> User Type
             </label>
             <select
